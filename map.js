@@ -22,13 +22,13 @@ function getTime() {
 } 
 setInterval(getTime, 1000);
 
-// function getDayToday () {
-//   let dateNow = new Date();
-//   let day = dateNow.getDay();
-//   let month = dateNow.getMonth();  
-//   let dayToday = document.querySelector("#day-today").innerHTML = `${day}, ${month}`;
-// }
-// getDayToday ();
+function getDayToday () {
+  let dateNow = new Date();
+  let day = dateNow.getDay();
+  let month = dateNow.getMonth();  
+  let dayToday = document.querySelector("#day-today").innerHTML = `${day}, ${month}`;
+}
+getDayToday ();
 
 
 function getNumberOfPeople () {
@@ -58,7 +58,7 @@ function update () {
   getNumberOfPeople();
 }
 
-setInterval(update, 5000);
+//setInterval(update, 5000);
 
 function getCoordinates () {
   fetch(urlCoordinates)
