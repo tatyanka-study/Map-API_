@@ -21,13 +21,14 @@ function getTime() {
   let outputTime = document.querySelector("#time").innerHTML = timeNow;
 } 
 setInterval(getTime, 1000);
-function getDayToday () {
-  let dateNow = new Date();
-  let day = dateNow.getDay();
-  let month = dateNow.getMonth();  
-  let dayToday = document.querySelector("#day-today").innerHTML = `${day}, ${month}`;
-}
-getDayToday ();
+
+// function getDayToday () {
+//   let dateNow = new Date();
+//   let day = dateNow.getDay();
+//   let month = dateNow.getMonth();  
+//   let dayToday = document.querySelector("#day-today").innerHTML = `${day}, ${month}`;
+// }
+// getDayToday ();
 
 
 function getNumberOfPeople () {
