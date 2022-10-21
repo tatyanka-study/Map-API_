@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Custom Symbols (Marker)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- playground-hide -->
+    <script>
+      const process = { env: {} };
+      process.env.GOOGLE_MAPS_API_KEY =
+        "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
+    </script>
+    <!-- playground-hide-end -->
+
+    <link rel="stylesheet" type="text/css" href="map.css" />      
+  </head>
+  <body>
+    <div id="wrap">
+
+      <div id="left-side">
+        <div id="locate">
+          <p class="bold">ISS is now located at: </p>
+          <p>latitude: <span></span>, longitude: <span></span></p>          
+        </div>
+        <div id="map">          
+        </div>
+      </div>      
+
+      <div id="right-side">
+        <div id="date">
+          <p class="bold">Current UTC time: <span id="time"></span></p>
+          <p id="day-today"></p>
+        </div>
+        <div>
+          <ul id="people-name">
+              <template id="people-list">    
+                  <li>{{name}}</li>                            
+              </template>
+           </ul>
+          <div>
+            <p class="bold">Total amount: <span id="total"></span> people on ISS now</p>
+          </div>         
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="mustache.min.js"></script>
+    <script src="map.js"></script>    
+
+  </body>
+</html>
