@@ -1,6 +1,7 @@
 
 let latitude = 0;
 let longitude = 0;
+let marker;
 let myLatLng = {lat: latitude, lng: longitude};
 let people = [];
 let urlCoordinates = "http://api.open-notify.org/iss-now.json";
@@ -53,43 +54,50 @@ function getNumberOfPeople () {
 function update () { 
   peopleName.innerHTML = " ";
   sumPeople = 0;
-  getCoordinates();
-  initMap();
+  getCoordinates().then(() => {
+    marker.setPosition(myLatLng);
+    console.log('title' + latitude)
+    marker.setTitle(`latitude ${latitude} longitude ${longitude}`); 
+  });   
   getNumberOfPeople();
 }
 
 setInterval(update, 5000);
 
 function getCoordinates () {
-  fetch(urlCoordinates)
+  return fetch(urlCoordinates)
     .then(response => response.json())
     .then(coordinates => {
       latitude = +(coordinates.iss_position.latitude);
+      console.log('fetch' + latitude)
       longitude = +(coordinates.iss_position.longitude);
       locationValueLat.textContent = latitude;
-      locationValueLng.textContent = longitude;      
-      console.log(latitude + "</br>" + longitude);
+      locationValueLng.textContent = longitude;  
+         
+      // console.log(latitude + "</br>" + longitude);
       return myLatLng = {lat: latitude, lng: longitude};                   
-    })            
+    })           
   };
-      
+
+  getCoordinates().then(() => {
+   initMap();
+  })
       
 function initMap() {
   //myLatLng = {lat: latitude, lng: longitude};
 
-    const map = new google.maps.Map(
+   const map = new google.maps.Map(
     document.getElementById("map"), 
     {
-      zoom: 4,
+      zoom: 2,
       center: myLatLng,
     });
-
-  new google.maps.Marker({
+  
+    marker = new google.maps.Marker({    
     position: myLatLng,
     map,
     title: `latitude ${latitude} longitude ${longitude}`,
   });
 }
 
-window.initMap = initMap;
-getNumberOfPeople ()
+getNumberOfPeople();
