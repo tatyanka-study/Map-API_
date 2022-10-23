@@ -58,7 +58,7 @@ function update () {
   getNumberOfPeople();
 }
 
-//setInterval(update, 5000);
+setInterval(update, 5000);
 
 function getCoordinates () {
   fetch(urlCoordinates)
