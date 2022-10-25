@@ -6,7 +6,7 @@
   height: 80%;
   width: 100%;
   margin: 20px 0;
-  border: 2px solid rgb(71, 71, 71); 
+  border: 2px solid rgb(71, 71, 71);
 }
 
 /* 
@@ -22,8 +22,8 @@ body {
 
 #wrap {
   width: 100%;
-  height: 100%;  
-  padding: 15px;  
+  height: 100%;
+  padding: 15px;
 }
 
 #left-side {
@@ -34,21 +34,23 @@ body {
 
 #right-side {
   width: 20%;
-  float: left;  
- 
+  float: left;
 }
 
 .bold {
   font-weight: bold;
 }
 
-#locate, #date, #people {
+#locate,
+#date,
+#people {
   border: 2px solid black;
   border-radius: 3px;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
 }
 
-#locate, #date {
+#locate,
+#date {
   padding-left: 15px;
 }
 
@@ -74,4 +76,3 @@ li {
   background-position-y: center;
   background-position-x: 4px;
 }
-

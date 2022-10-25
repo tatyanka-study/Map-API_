@@ -9,22 +9,20 @@
         "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
     </script>
     <!-- playground-hide-end -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/less" ></script> 
-    <link rel="stylesheet/less" type="text/css" href="mapstyle.less"/>
-    <link rel="stylesheet" type="text/css" href="mapstyle.css"/>      
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/less" ></script> 
+    <link rel="stylesheet/less" type="text/css" href="mapstyle.less"/> -->
+    <link rel="stylesheet" type="text/css" href="mapstyle.css" />
   </head>
   <body>
     <div id="wrap">
-
       <div id="left-side">
         <div id="locate">
-          <p class="bold">ISS is now located at: </p>
-          <p>latitude: <span></span>, longitude: <span></span></p>          
+          <p class="bold">ISS is now located at:</p>
+          <p>latitude: <span></span>, longitude: <span></span></p>
         </div>
-        <div id="map">          
-        </div>
-      </div>      
+        <div id="map"></div>
+      </div>
 
       <div id="right-side">
         <div id="date">
@@ -33,16 +31,17 @@
         </div>
         <div id="people">
           <ul id="people-name">
-              <template id="people-list">    
-                  <li>{{name}}</li>                            
-              </template>
-           </ul>
+            <template id="people-list">
+              <li>{{name}}</li>
+            </template>
+          </ul>
           <div>
-            <p class="bold">Total amount: <span id="total"></span> people on ISS now</p>
-          </div>         
+            <p class="bold">
+              Total amount: <span id="total"></span> people on ISS now
+            </p>
+          </div>
         </div>
       </div>
-
     </div>
 
     <!-- 
@@ -51,12 +50,8 @@
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
-      
-    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"></script>
     <script src="mustache.min.js"></script>
-    <script src="map.js"></script>    
-
+    <script src="map.js"></script>
   </body>
 </html>
